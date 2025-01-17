@@ -4,11 +4,11 @@ from .models import HealthTip
 from .serializers import healthTipSerializer
 
 # Create your views here.
-class HealthTipList(generics.ListCreateAPIView):
+class HealthTipListView(generics.ListCreateAPIView):
     queryset = HealthTip.objects.all()
     serializer_class = healthTipSerializer
     
     
-class HealthTipDetail(generics.RetrieveUpdateDestroyAPIView):
+class HealthTipDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = HealthTip.objects.all()
     serializer_class = healthTipSerializer
