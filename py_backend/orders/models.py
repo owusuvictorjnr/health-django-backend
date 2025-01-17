@@ -6,9 +6,9 @@ class Order(models.Model):
     DELIVERED = 'Delivered'
     CANCELLED =  'Cancelled'
     STATUS_CHOICES = [
-        (PENDING, 'Pending')
-        (DELIVERED, 'Delivered')
-        (CANCELLED, 'Cancelled')
+        (PENDING, 'Pending'),
+        (DELIVERED, 'Delivered'),
+        (CANCELLED, 'Cancelled'),
     ]
 
 
@@ -22,8 +22,8 @@ class Order(models.Model):
     
 
 
-    class OrderItem(models.Model):
+class OrderItem(models.Model):
         order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
-        item = models.models.ForeignKey("marketplace.Item",  on_delete=models.CASCADE)
+        item = models.ForeignKey("marketplace.Item",  on_delete=models.CASCADE)
         quantity = models.PositiveIntegerField()
     
